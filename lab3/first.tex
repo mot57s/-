@@ -1,0 +1,152 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx} 
+\usepackage[english,russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\titleformat{\section}[block]{\centering\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\large\bfseries §3}  
+\fancyhead[C]{\small\bfseries МЕТОД РАЗДЕЛЕНИЯ ПЕРЕМЕННЫХ} 
+\fancyhead[R]{\thepage}                                             
+\renewcommand{\headrulewidth}{0pt}  
+\begin{document}
+\thispagestyle{fancy}
+\setcounter{page}{103}
+\setcounter{section}{2} 
+Полученное выше интегральное представление (3*) решения обыкновенного дифференциального уравнения (1*) имеет, как мы убедились, тот же физический смысл, что и формула (59), дающая интегральное представление решения неоднородного уравнения колебаний.
+
+\textbf{5. Общая первая краевая задача.} Рассмотрим общую первую краевую задачу для уравнения колебаний:
+\textit{найти решение уравнения}
+\[
+u_{tt} = a^2 u_{xx} + f(x, t), \quad 0 < x < l, \, t > 0
+\tag{45}
+\]
+\textit{с дополнительными условиями}
+\[
+\left.
+\begin{aligned}
+&u(x, 0) = \varphi(x), \\
+&u_t(x, 0) = \psi(x),
+\end{aligned}
+\right\}
+\quad 0 \leq x \leq l;
+\tag{46}
+\]
+\[
+\left.
+\begin{aligned}
+&u(0, t) = \mu_1(t), \\
+&u(l, t) = \mu_2(t),
+\end{aligned}
+\right\}
+\quad t \geq 0.
+\tag{47}
+\]
+Введем новую неизвестную функцию \(v(x, t)\), полагая:
+\[
+u(x, t) = U(x, t) + v(x, t),
+\]
+так что \(v(x, t)\) представляет отклонение функции \(u(x, t)\) от некоторой известной функции \(U(x, t)\).
+Эта функция \(v(x, t)\) будет определяться как решение уравнения
+\[
+v_{tt} = a^2 v_{xx} +\bar f(x, t), \quad \bar f(x, t) = f(x, t) - \bigl[U_{tt} - a^2 U_{xx}\bigr]
+\]
+с дополнительными условиями
+\[
+v(x, 0) = \bar{\varphi}(x), \quad \bar{\varphi}(x) = \varphi(x) - U(x, 0),
+\]
+\[
+v_t(x, 0) = \bar{\psi}(x); \quad \bar{\psi}(x) = \psi(x) - U_t(x, 0);
+\]
+\[
+v(0, t) = \bar{u}_1(t), \quad \bar{u}_1(t) = \mu_1(t) - U(0, t),
+\]
+\[
+v(l, t) = \bar{u}_2(t); \quad \bar{u}_2(t) = \mu_2(t) - U(l, t).
+\]
+Выберем вспомогательную функцию \(U(x, t)\), таким образом, чтобы
+\[
+\tilde{\mu}_1(t) = 0 \quad \text{и} \quad \tilde{\mu}_2(t) = 0;
+\]
+для этого достаточно положить
+\[
+U(x, t) = \mu_1(t) + \frac{x}{l} \bigl[\mu_2(t) - \mu_1(t)\bigr].
+\]
+Тем самым общая краевая задача для функции \( u(x, t) \) сведена к краевой задаче для функции \( v(x, t) \) при нулевых граничных условиях. Метод решения этой задачи изложен выше (см. п. 4).
+\newpage  
+
+\fancyhead[L]{\thepage}                                      % 104 СЛЕВА
+\fancyhead[C]{\bfseries УРАВНЕНИЯ ГИПЕРБОЛИЧЕСКОГО ТИПА}     % НАЗВАНИЕ ПО ЦЕНТРУ
+\fancyhead[R]{\bfseries ГЛ.~II}                              % ГЛ. II СПРАВА
+\thispagestyle{fancy}
+\setcounter{page}{104}
+\textbf{6. Краевые задачи со стационарными неоднородностями.} Весьма важным классом задач являются краевые задачи со стационарными неоднородностями, когда граничные условия и правая часть уравнения не зависят от времени
+\[
+u_{tt} = a^2 u_{xx} + f_0(x), \tag{45'}
+\]
+\[
+\left.
+\begin{aligned}
+&u(x, 0) = \varphi(x), \\
+&u_t(x, 0) = \psi(x),
+\end{aligned}
+\right\}
+\tag{46}
+\]
+\[
+\left.
+\begin{aligned}
+&u(0, t) = u_1, \quad u_1 = \text{const}, \\
+&u(l, t) = u_2, \quad u_2 = \text{const},
+\end{aligned}
+\right\}
+\tag{47'}
+\]
+В этом случае решение естественно искать в виде суммы
+\[
+u(x, t) = \bar{u}(x) + v(x, t),
+\]
+где \(\bar{u}(x)\) — стационарное состояние (статический прогиб) струны, определяемое условиями
+\[
+\begin{aligned}
+a^2 \bar{u}''(x) + f_0(x) &= 0, \\
+\bar{u}(0) &= u_1, \\
+\bar{u}(l) &= u_2,
+\end{aligned}
+\]
+а \(v(x, t)\) — отклонение от стационарного состояния. Нетрудно видеть, что функция \(\bar{u}(x)\) равна
+\[
+\bar{u}(x) = u_1 + (u_2 - u_1) \frac{x}{l} + \frac{x}{l} \int_0^l d\xi_1 \int_0^{\xi_1} \frac{f_0(\xi_2)}{a^2} d\xi_2 - \int_0^x d\xi_1 \int_0^{\xi_1} \frac{f_0(\xi_2)}{a^2} d\xi_2.
+\]
+В частности, если \(f_0 = \text{const}\), то
+\[
+\bar{u}(x) = u_1 + (u_2 - u_1) \frac{x}{l} + \frac{f_0}{2a^2} (l x - x^2).
+\]
+Функция \(v(x, t)\), очевидно, удовлетворяет однородному уравнению
+\[
+v_{tt} = a^2 v_{xx}
+\]
+с однородными граничными условиями
+\[
+v(0, t) = 0,
+\]
+\[
+v(l, t) = 0,
+\]
+и начальными условиями
+\[
+\begin{aligned}
+v(x, 0) &= \bar{\varphi}(x), \quad \bar{\varphi}(x) = \varphi(x) - \bar{u}(x), \\
+v_t(x, 0) &= \psi(x).
+\end{aligned}
+\]
+
+Таким образом, \(v\) является решением простейшей краевой задачи, рассмотренной нами в п. 1 настоящего параграфа.
+
+\end{document}
